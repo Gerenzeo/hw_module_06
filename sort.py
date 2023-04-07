@@ -8,7 +8,7 @@ EXTENS = {
     "videos": ['avi', 'mp4', 'mov', 'mkv'],
     "documents": ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx', 'csv'],
     "audio": ['mp3', 'ogg', 'wav', 'amr'],
-    "archives": ['zip', 'gz', 'tar', 'tar.gz'],
+    "archives": ['zip', 'gz', 'tar'],
     "unknown": [] 
 }
 for key, value in EXTENS.items():
@@ -123,7 +123,7 @@ def remove_all_folders(folders_list):
 def unpack_archives():
     archives = 'archives'
     for archive in Path(archives).iterdir():
-        if archive.suffix[1:] in ['zip', 'tar', 'gz']:
+        if archive.suffix[1:] in ['zip', 'tar', 'gz', 'tar.gz']:
             folder_archive_name = archive.stem
             path_archive = archives + '/' + folder_archive_name
             
